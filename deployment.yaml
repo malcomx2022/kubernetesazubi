@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeproject1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodeproject1
+  template:
+    metadata:
+      labels:
+        app: nodeproject1
+    spec:
+      containers:
+      - name: nodeproject1
+        image: ulrich2022/nodeproject:tag
+        ports:
+        - containerPort: 8080
